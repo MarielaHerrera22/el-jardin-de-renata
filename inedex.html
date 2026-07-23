@@ -10,25 +10,214 @@
     <title>El Jardín de Renata</title>
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
-    <div class="overlay">
 
-        <div class="titulo">
 
-         <h1>Siempre vas a tener un lugar entre nosotros</h1>
-         <img src="assets/img/mariposa.png" class="mariposa" alt="mariposa">
-        </div>
+<div class="overlay">
+
+
+    <div class="titulo">
+
+
+        <h1>
+            Siempre vas a tener un lugar entre nosotros
+        </h1>
+
+
+        <img 
+            src="assets/img/mariposa.png" 
+            class="mariposa" 
+            alt="mariposa"
+        >
+
+
+        <button id="btn-flor">
+
+            <img
+                src="assets/img/boton-portada.png"
+                alt="Plantar una flor"
+                class="boton-madera"
+            >
+
+        </button>
+
 
     </div>
+
+
+</div>
+
+
+
+<!-- MODAL PLANTAR -->
+
+
+<div id="modal-flor">
+
+
+    <div class="ventana">
+
+
+        <button id="cerrar-modal">
+            ✕
+        </button>
+
+
+        <h2>
+            Plantar una flor
+        </h2>
+
+
+        <p class="subtitulo">
+
+            No hace falta escribir perfecto.<br>
+            Alcanza con escribir con amor.
+
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+            Elegí una flor
+        </h3>
+
+
+
+        <div class="cantero">
+
+
+            <img 
+                src="assets/img/cantero.png" 
+                id="cantero"
+            >
+
+
+            <img 
+                src="assets/flores/rosa.png"
+                class="flor-interactiva rosa"
+                data-flor="rosa"
+            >
+
+
+            <img 
+                src="assets/flores/margarita.png"
+                class="flor-interactiva margarita"
+                data-flor="margarita"
+            >
+
+
+            <img 
+                src="assets/flores/lavanda.png"
+                class="flor-interactiva lavanda"
+                data-flor="lavanda"
+            >
+
+
+            <img 
+                src="assets/flores/girasol.png"
+                class="flor-interactiva girasol"
+                data-flor="girasol"
+            >
+
+
+            <img 
+                src="assets/flores/jazmin.png"
+                class="flor-interactiva jazmin"
+                data-flor="jazmin"
+            >
+
+
+        </div>
+
+
+
+        <label>
+            💛 ¿Qué te gustaría regalarle a Renata hoy?
+        </label>
+
+
+        <label>
+            Tu mensaje
+        </label>
+
+
+        <textarea 
+            id="mensaje"
+            placeholder="Escribí tu mensaje..."
+        ></textarea>
+
+
+
+        <label>
+            Tu nombre
+        </label>
+
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Tu nombre"
+        >
+
+
+
+        <button 
+            id="plantar" 
+            class="oculto"
+        >
+
+            <img 
+                src="assets/img/boton-formulario.png"
+                alt="Plantar mi flor"
+                class="boton-madera"
+            >
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+<!-- MENSAJE ELEGIR LUGAR -->
+
+
+<div id="sembrar" class="oculto">
+
+    <p>
+        🌱 Elegí un lugar para plantar tu flor
+    </p>
+
+</div>
+
+
+
+
+<!-- JARDIN -->
+
+<div id="jardin"></div>
+
+
+
+<script src="js/app.js"></script>
+
 
 </body>
 

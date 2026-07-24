@@ -198,22 +198,22 @@ body{
    PERGAMINO
 ========================================== */
 
-
 .ventana{
 
-    width:650px;
+    width:850px;
 
-    max-width:90%;
+    max-width:92%;
 
-    min-height:780px;
+    min-height:900px;
 
     background:url("../assets/img/papel.png") center/100% 100% no-repeat;
 
-    padding:90px 100px;
+    padding:90px 120px;
 
     position:relative;
 
 }
+
 
 
 
@@ -281,7 +281,7 @@ body{
 
     font-family:'Caveat',cursive;
 
-    font-size:52px;
+    font-size:60px;
 
     color:#5d4a38;
 
@@ -368,7 +368,7 @@ h3{
 
 .ventana textarea{
 
-    height:170px;
+    height:200px;
 
     resize:none;
 
@@ -454,7 +454,7 @@ h3{
 
     justify-content:center;
 
-    margin:25px auto;
+    margin:35px auto 45px;
 
 }
 
@@ -472,7 +472,6 @@ h3{
 
 .flor-interactiva{
 
-    position:absolute;
 
     cursor:pointer;
 
@@ -485,66 +484,6 @@ h3{
 .flor-interactiva:hover{
 
     transform:scale(1.12);
-
-}
-
-
-
-.rosa{
-
-    width:90px;
-
-    left:30%;
-
-    bottom:25%;
-
-}
-
-
-
-.margarita{
-
-    width:70px;
-
-    left:45%;
-
-    bottom:20%;
-
-}
-
-
-
-.lavanda{
-
-    width:80px;
-
-    left:55%;
-
-    bottom:18%;
-
-}
-
-
-
-.girasol{
-
-    width:100px;
-
-    right:25%;
-
-    bottom:25%;
-
-}
-
-
-
-.jazmin{
-
-    width:65px;
-
-    right:40%;
-
-    bottom:35%;
 
 }
 
@@ -768,3 +707,114 @@ h3{
     }
 
 }
+
+   /* ============================
+
+   SELECTOR DE FLORES
+
+    ============================ */
+
+
+
+.selector-flores{
+
+
+
+display:grid;
+
+
+
+grid-template-columns:repeat(5,1fr);
+
+
+
+gap:18px 12px;
+
+
+
+margin:30px 0;
+
+
+
+}
+
+
+
+.opcion-flor{
+
+
+
+    display:flex;
+
+
+
+    flex-direction:column;
+
+
+
+    align-items:center;
+
+
+
+    text-align:center;
+
+
+
+    }
+
+
+
+    .opcion-flor img{
+
+
+
+    width:72px;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:.25s ease;
+
+
+
+    }
+
+
+
+    .opcion-flor img:hover{
+
+
+
+    transform:scale(1.12);
+
+
+
+    }
+
+
+
+    .opcion-flor span{
+
+
+
+    margin-top:8px;
+
+
+
+    font-family:'Caveat',cursive;
+
+
+
+    font-size:24px;
+
+
+
+    color:#6b5441;
+
+
+
+    } 
+

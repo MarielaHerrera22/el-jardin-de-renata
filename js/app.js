@@ -8,10 +8,29 @@ const botonPlantar = document.getElementById("plantar");
 const sembrar = document.getElementById("sembrar");
 const ventana = document.querySelector(".ventana");
 
+const imagen = document.getElementById("imagen");
+const vistaImagen = document.getElementById("vista-imagen");
+
+const significados = {
+
+    rosa: "Cariño",
+    margarita: "Esperanza",
+    amapola: "Recuerdo",
+    tulipan: "Gratitud",
+    girasol: "Luz",
+    "rosa-china": "Alegría",
+    dalia: "Fortaleza",
+    lavanda: "Calma",
+    lirio: "Pureza",
+    jazmin: "Amor eterno"
+
+};
+
 
 let florSeleccionada = null;
 let florElegida = "";
 let esperandoLugar = false;
+let nuevaFlor = null;
 
 
 
@@ -126,13 +145,26 @@ botonPlantar.addEventListener("click", () => {
 
 
 
-    console.log({
+    const archivoImagen = imagen.files[0];
 
-        nombre,
-        mensaje,
-        flor: florElegida
+    nuevaFlor = {
 
-    });
+    nombre: nombre,
+
+    mensaje: mensaje,
+
+    flor: florElegida,
+
+    significado: significados[florElegida],
+
+    fecha: new Date().toLocaleDateString(),
+
+    imagen: archivoImagen ? archivoImagen.name : null
+
+};
+    
+
+console.log(nuevaFlor);
 
 
 
@@ -173,7 +205,16 @@ sembrar.style.cursor = "crosshair";
 sembrar.addEventListener("click", (e) => {
 
     sembrar.classList.add("oculto");
-    const pozo = document.createElement("div");
+    nuevaFlor.posicion = {
+
+         x: e.clientX,
+
+         y: e.clientY
+
+    };
+
+console.log(nuevaFlor);
+const pozo = document.createElement("div");
     pozo.classList.add("pozo");
     pozo.style.left = `${e.clientX}px`;
     pozo.style.top = `${e.clientY}px`;
@@ -213,3 +254,28 @@ sembrar.addEventListener("click", (e) => {
 
 }, 300);
 })
+imagen.addEventListener("change", () => {
+
+    const archivo = imagen.files[0];
+
+    if(!archivo){
+        vistaImagen.innerHTML = "";
+        return;
+    }
+
+
+    const lector = new FileReader();
+
+
+    lector.onload = (e) => {
+
+        vistaImagen.innerHTML = `
+            <img src="${e.target.result}" class="imagen-previa">
+        `;
+
+    };
+
+
+    lector.readAsDataURL(archivo);
+
+});
